@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    z-index: 1200;
+}
+
+.navbar {
+    display: flex;/*lines everything up in the navbar*/
+    justify-content: space-between;/*divides the items in the navbar*/
+    align-items: center;/*centers everything in the navbar*/
+    padding: 0 20px;/*adjust the space between items 0 is top and bottom, 20px is left and right*/
+    height: 100px;
+    background-color: black;
+    border-radius: 5px 5px 0 0;
+    position: fixed;
+    top: 0;
+    z-index: 1100;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+}
+
+.navbar img {
+    display: flex;
+    max-height: 100%;
+}
+
+.nav-links {
+    list-style: none;/* removes the bullet points*/
+    display: flex;/* makes the li line up horizontally*/
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none; /*removes the underline*/
+    color: white;/* gets rid of the blue*/
+}
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+    background-color: tomato;
+}
+
+.mobile-menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: bottom 0.6s ease;
+    z-index: 1000;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding:0;
+    margin: 0;
+}
+
+.mobile-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.mobile-menu.active {
+    bottom: 0;
+}
+
+/*hero section*/
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: border-box;
+    align-items: center;
+    height: 50vh;
+    padding: 5px;
+    justify-content: center;
+    background: url(Images/Wedding.jpg);
+    background-repeat:no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-section h1 {
+    background: rgba(red, green, blue, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px 40px;
+    border: 0px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.hero-section p {
+    color: beige;
+    opacity: 80%;
+    margin: 10px auto;
+}
+
+.button  {
+    display: flex;
+    width: 50%;
+    background: none;
+    justify-content: center;
+    justify-self: center;
+    opacity: 50%;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Serivices Section */
+
+.services-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.flip-card-front {
+  width: 300px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.flip-card-back {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  background: darkslategray;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front h2 {
+    background: rgba(red, green, blue, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 20px 40px;
+    border: 0px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.flip-card-back p {
+    background: rgba(red, green, blue, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px 40px;
+    border: 0px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.flip-card:nth-of-type(1) .flip-card-front {
+    background-image: url(../Images/Wedding+1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.flip-card:nth-of-type(1) .flip-card-back {
+    background-image: url(Images/glass.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color:white;    
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+.flip-card:nth-of-type(2) .flip-card-front {
+    background-image: url(Images/Cabin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    color: white;
+}
+
+.flip-card:nth-of-type(2) .flip-card-back {
+    background-image: url(Images/0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: black;
+    font-weight: bold;
+}
+
+.flip-card:nth-of-type(3) .flip-card-front {
+    background-image: url(Images/IMG_7555.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.flip-card:nth-of-type(3) .flip-card-back {
+    background-image: url(Images/Painted\ Barn.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* About Section */
+
+.about-section img {
+    max-height: 120px;
+    max-width: 90px;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.about-section p {
+    padding: 0 40px;
+    text-align: center;
+}
+/* footer */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px auto;
+    background-color:black;
+    border-radius: 5px;
+    justify-content: space-around;
+    color: white;
+    width:fit-content
+}
+
+.footer form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer input{
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-button {
+    width: 200px;
+    height: 30px;
+}
+
+/* Mobile Section */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .services-section {
+        flex-direction: column;
+        border-radius: 10px;
+    }
+
+    .services-section div {
+        width: 100%;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+}
