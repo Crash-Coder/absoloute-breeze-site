@@ -7,6 +7,7 @@
     color: white;
     padding: 20px;
     z-index: 1200;
+    margin-top: 100px;
 }
 
 .navbar {
@@ -31,7 +32,7 @@
     place-items: center;
 }
 
-.navbar img {
+.navbar-img {
     display: flex;
     max-height: 100%;
 }
@@ -49,6 +50,7 @@
     text-decoration: none; /*removes the underline*/
     color: white;/* gets rid of the blue*/
 }
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -65,7 +67,7 @@
 }
 
 .hamburger:hover span {
-    background-color: tomato;
+    background-color: beige;
 }
 
 .mobile-menu {
@@ -102,6 +104,14 @@
 
 .mobile-menu.active {
     bottom: 0;
+}
+
+.mobile-menu-img {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    opacity: 40%;
+    border-radius: 60px;
 }
 
 /*hero section*/
@@ -344,6 +354,14 @@
 .footer-button {
     width: 200px;
     height: 30px;
+}
+
+/* our story */
+
+.our-story {
+    display: flex;
+    padding: 10px;
+    margin-top: 100px;
 }
 
 /* Mobile Section */
