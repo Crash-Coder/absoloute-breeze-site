@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
+
+
 
 .body {
     background-color: black;
@@ -8,6 +13,17 @@
     padding: 20px;
     z-index: 1200;
     margin-top: 100px;
+    font-family: 'Lato', sans-serif; /* Ensures a consistent base, or use a specific fallback */
+    line-height: 1.6; /* Good practice for readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cardo', serif;
+}
+
+/* Font for all Paragraphs */
+p {
+    font-family: 'Lato', sans-serif;
 }
 
 .navbar {
@@ -23,6 +39,8 @@
     z-index: 1100;
     width: 100%;
     box-sizing: border-box;
+    border-bottom: #ccc;
+    
 }
 
 .navbar h3 {
@@ -32,9 +50,12 @@
     place-items: center;
 }
 
-.navbar-img {
-    display: flex;
-    max-height: 100%;
+.navbar-img img {
+    max-height: 70px;
+    max-width: 70px;
+    width: auto;
+    height: auto;
+    display: block;
 }
 
 .nav-links {
@@ -320,49 +341,226 @@
 }
 /* footer */
 
-.footer {
-    display: flex;
-    flex-direction: column;
+.footer-container {
     align-items: center;
-    padding: 10px;
+    padding: 2rem;
     margin: 5px auto;
     background-color:black;
     border-radius: 5px;
     justify-content: space-around;
     color: white;
-    width:fit-content
+    width:fit-content;
+    text-align: center;
 }
 
-.footer form {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer input{
+.footer-container input{
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
+    max-width: 500px;
     box-sizing: border-box;
+}
+
+.footer-container img {
+    max-height: 60px;
+    margin-top: 1rem;
+}
+
+.footer-container li {
+  display: inline-block;   /* make links horizontal */
+  margin: 0 1rem;
+}
+
+.footer-container .social-media {
+  margin: 1rem 0;
+}
+
+.footer-container .social-media a {
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  color: #333;               /* default icon color */
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease; /* smooth animation */
+}
+
+.social-media a:hover {
+  color: white;              /* fallback color on hover */
+}
+
+/* Facebook hover */
+.social-media a[href*="facebook"]:hover {
+  background-color: #1877f2; /* facebook blue */
+  color: white;/* 
+  box-shadow: 0 0 10px #1877f2; */
+  box-shadow: 0 0 20px #1877f2;
+}
+
+/* TikTok hover */
+.social-media a[href*="tiktok"]:hover {
+  background-color: #010101; /* tiktok black */
+  color: #25f4ee;            /* tiktok cyan */
+  box-shadow: 0 0 20px #25f4ee;
+  
 }
 
 .footer-button {
     width: 200px;
     height: 30px;
+    border-radius: 10px;
+    background-color: darkgray;
+    color: white;
+    margin-top: 8px;
+    margin-left: 10px;
 }
 
+.footer-button:hover {
+    color: azure;
+    background-color: grey;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  gap: 20px; /* spacing between links */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-links a:hover {
+  color: lightgray;
+}
+
+.footer-input {
+    display: flex;
+    padding: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 500px;
+}
 /* our story */
 
 .our-story {
     display: flex;
+    flex-direction: row;
     padding: 10px;
     margin-top: 100px;
 }
+
+.our-story p {
+    font-size: 1.2rem;
+    padding-right: 90px;
+}
+
+.our-story-image img {
+    border-radius: 50% / 60%;
+    width: 300px;
+    height: 350px;
+}
+
+/* vendors */
+
+.vendors {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    width: 600px;
+}
+
+.vendors h3 {
+    text-align: center;
+}
+
+.vendor-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    padding: 0 20px;
+    overflow: auto;
+    flex: 1 1 300px;
+}
+
+.vendor-info:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.vendor-info img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.vendor-info a {
+    text-decoration: none;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.vendor-title {
+    text-align: center;
+    width: 100%;
+}
+
+/* Get In Toutch */
+.get-in-touch {
+    display: flex;
+    padding-top: 20px;
+}
+
+.get-in-touch-text {
+    padding: 50px 20px 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+}
+
+.get-in-touch h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.form button {
+    cursor: pointer;
+    color: white;
+    background-color: darkgrey;
+}
+
+.form button:hover {
+    background-color: cadetblue;
+}
+
+
 
 /* Mobile Section */
 
@@ -374,6 +572,15 @@
 
     .nav-links li {
         margin: 10px 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-container img {
+        max-width: 200px;
+        max-height: 200px;
     }
 
     .hamburger {
@@ -399,6 +606,21 @@
 
     .mobile-menu {
         display: flex;
+    }
+
+    .vendor-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .get-in-touch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form {
+        justify-content: center;
     }
 }
 

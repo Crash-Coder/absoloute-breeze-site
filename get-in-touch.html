@@ -12,18 +12,48 @@
 
   <div class="get-in-touch">
     <div class="get-in-touch-text">
-        <h3>We would love to hear from you.</h3>
+        <h1>We would love to hear from you.</h1>
         <p>Whether you have questions, inquiries, or would like to book our event venue for your special occasion, our dedicated team is here to assist you! Please feel free to reach out through the contact form or give us a call. We value your interest and look forward to helping you create unforgettable memories here at Absolute Breeze!</p>
     </div>
     <div class="form">
         <form action="/submit-form" method="POST">
             <label for="fname">First Name</label>
-            <input type="text" id="name" name="name"><br><br>
+            <br>
+            <input type="text" id="fname" name="fname">
+            <br>
+            <label for="Lname">Last Name</label>
+            <br>
+            <input type="text" id="lname" name="lname">
+            <br>
+            <br>
+            <label for="email">Email Address (required)</label>
+            <br>
+            <input type="email" id="email" name="email">
+            <br>
+            <br>
+            <div class="drop-box">
+              <label for="sneeded">Service Needed</label>
+              <br>
+              <select>
+                <option value="0">Select One</option>
+                <option value="1">Weddings</option>
+                <option value="2">Events</option>
+                <option value="3">Accomidation</option>
+                <option value="4">Other</option>
+              </select>
+            </div><br><br>
+            <label for="message">Messsage (required)</label>
+            <br>
+            <textarea name="email_message" id="message" rows="5" cols="40"></textarea><br>
+            <button>Submit</button>
 
 
         </form>
     </div>
-  <script src="app.js"></script>
+
 
   </div>
+  <div id="footer"></div>
+  <script src="app.js"></script>
 </body>
+</html>
